@@ -4,5 +4,39 @@
 <link rel="stylesheet" href="/styles/styles.css"/>
 
 <script type="text/javascript" src="https://s7d1.scene7.com/s7viewers/libs/responsive_image.js" defer></script>
-<script src="https://assets.adobedtm.com/59610d662d36/43d69fb63df0/launch-9ec6d57aa2a3-development.min.js" async></script>
+<script>
+window.dataLayer = window.dataLayer || {};
+(function() {
+  try {
+    var title = (document && document.title) ? document.title : '';
+    var metaPageName = (document && document.querySelector) ? (document.querySelector('meta[name="pagename"]') || {}).content : '';
+    var fromTitle = title && title.indexOf('|') !== -1 ? title.split('|').pop().trim() : title.trim();
+    var path = location.pathname.replace(/\/+/g, '/').replace(/^\//, '').replace(/\/$/, '');
+    var fromPath = path ? path.split('/').pop() : 'home';
+    var name = (fromTitle || metaPageName || fromPath || 'home').toLowerCase();
+
+    window.dataLayer.projectName = "luma3";
+    window.dataLayer.project = {
+      id: "luma3",
+      title: "Luma Website v3",
+      template: "web-modular/empty-website-v2",
+      locale: "en-US",
+      currency: "USD"
+    };
+    window.dataLayer.page = {
+      name: name,
+      title: name.toUpperCase()
+    };
+    window.dataLayer.cart = window.dataLayer.cart || {};
+    window.dataLayer.partnerData = window.dataLayer.partnerData || {
+      PartnerID: "Partner456",
+      BrandLoyalist: 88,
+      Seasonality: "Fall"
+    };
+
+    // Event dispatch moved to Launch script onload for performance
+  } catch (e) {}
+})();
+</script>
+<script src="https://assets.adobedtm.com/7b819c6f78be/21c6f4b420d8/launch-d287020569a5-development.min.js" async onload="try{window.dispatchEvent(new CustomEvent('page-view'));}catch(e){try{var evt=document.createEvent('Event');evt.initEvent('page-view',true,true);window.dispatchEvent(evt);}catch(_e){}}"></script>
 
