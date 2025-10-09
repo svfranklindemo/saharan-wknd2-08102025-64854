@@ -102,5 +102,5 @@ function buildTwitterLinks() {
 if (!window.location.hostname.includes('localhost')) {
   
   embedCustomLibraries();
-  loadAT();
+  //loadAT();
 }
